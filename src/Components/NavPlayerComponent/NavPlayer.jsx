@@ -1,3 +1,8 @@
+import Next from '../../assets/playerbuttons/Next.png'
+import Play from '../../assets/playerbuttons/Play.png'
+import Previous from '../../assets/playerbuttons/Previous.png'
+import Repeat from '../../assets/playerbuttons/Repeat.png'
+import Shuffle from '../../assets/playerbuttons/Shuffle.png'
 import '../NavPlayerComponent/NavPlayer.css'
 const NavPlayer = () => {
   return (
@@ -8,19 +13,19 @@ const NavPlayer = () => {
             <div className="col-6 col-md-4 col-lg-2 offset-3 offset-md-4 offset-lg-5 playerControls mt-1">
               <div className="row">
                 <a href="#">
-                  <img src="playerbuttons/Shuffle.png" alt="shuffle" />
+                  <img src={Shuffle} alt="shuffle" />
                 </a>
                 <a href="#">
-                  <img src="playerbuttons/Previous.png" alt="shuffle" />
+                  <img src={Previous} alt="shuffle" />
                 </a>
                 <a href="#">
-                  <img src="playerbuttons/Play.png" alt="shuffle" />
+                  <img src={Play} alt="shuffle" />
                 </a>
                 <a href="#">
-                  <img src="playerbuttons/Next.png" alt="shuffle" />
+                  <img src={Next} alt="shuffle" />
                 </a>
                 <a href="#">
-                  <img src="playerbuttons/Repeat.png" alt="shuffle" />
+                  <img src={Repeat} alt="shuffle" />
                 </a>
               </div>
             </div>

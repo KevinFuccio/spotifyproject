@@ -1,5 +1,23 @@
 import '../MainPageComponent/MainPage.css'
+import { useEffect, useState } from 'react'
+import { fetchedAlbums } from '../../actions'
+import AlbumComponent from '../AlbumComponent'
 const MainPage = ()=>{
+  const [albumRock,setAlbumRock] = useState([])
+  const [albumPop,setAlbumPop] = useState([])
+  const [albumHipHop,setAlbumHipHop] = useState([])
+  console.log(albumRock);
+  useEffect(()=>{
+    (async () => {
+      const data = await fetchedAlbums('dreamtheater') //ProgMetal Albums
+      const data2 = await fetchedAlbums('ladygaga') //POP albums
+      const data3 = await fetchedAlbums('icecube') //HIP HOP albums
+      setAlbumRock(data)
+      setAlbumPop(data2)
+      setAlbumHipHop(data3)
+     })()
+    // fetchedAlbums('dreamtheater').then((data)=>{setAlbums(data)})
+  },[])
     return(
       <div className='body'>
         <div className="col-12 col-md-9 offset-md-3 mainPage">
@@ -28,8 +46,12 @@ const MainPage = ()=>{
                 <h2>Rock ClassNameics</h2>
                 <div
                   className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
-                  id="rockSection"
-                ></div>
+                 
+                >
+                  {albumRock.map((data,index)=>(
+                    <AlbumComponent data={data} key={index}/>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -39,8 +61,10 @@ const MainPage = ()=>{
                 <h2>Pop Culture</h2>
                 <div
                   className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
-                  id="popSection"
-                ></div>
+                 
+                >{albumPop.map((data,index)=>(
+                  <AlbumComponent data={data} key={index}/>
+                ))}</div>
               </div>
             </div>
           </div>
@@ -51,7 +75,9 @@ const MainPage = ()=>{
                 <div
                   className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                   id="hipHopSection"
-                ></div>
+                >{albumHipHop.map((data,index)=>(
+                  <AlbumComponent data={data} key={index}/>
+                ))}</div>
               </div>
             </div>
           </div>

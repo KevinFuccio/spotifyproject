@@ -1,6 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import logo from "../../assets/Spotify_Logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faBookOpen} from "@fortawesome/free-solid-svg-icons";
 import './Navbar.css';
 
 const NavBar = () => {
@@ -37,12 +38,12 @@ const NavBar = () => {
                   <ul>
                     <li>
                       <a className="nav-item nav-link" href="index.html">
-                      <FontAwesomeIcon icon="fas fa-home" /> Home
+                      <FontAwesomeIcon icon={faHome} /> Home
                       </a>
                     </li>
                     <li>
                       <a className="nav-item nav-link" href="#">
-                      <FontAwesomeIcon icon="fas fa-book-open" /> Your
+                      <FontAwesomeIcon icon={faBookOpen} /> Your
                         Library
                       </a>
                     </li>
