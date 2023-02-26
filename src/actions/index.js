@@ -1,4 +1,6 @@
 export const ADD_ALBUMS = "ADD_ALBUMS";
+export const SONG_PLAY = "SONG_PLAY";
+export const REMOVE_SONG = "REMOVE_SONG"
 
 export const fetchedAlbums = async(name) => {
     try {

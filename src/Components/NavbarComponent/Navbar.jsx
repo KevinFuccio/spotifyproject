@@ -38,15 +38,15 @@ const NavBar = () => {
                 <div className="navbar-nav">
                   <ul>
                     <li>
-                      <a className="nav-item nav-link" href="index.html">
+                      <Link to={'/'} className="nav-item nav-link">
                       <FontAwesomeIcon icon={faHome} /> Home
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="nav-item nav-link" href="#">
+                      <Link to={'/your-library'} className="nav-item nav-link" >
                       <FontAwesomeIcon icon={faBookOpen} /> Your
                         Library
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <div className="input-group mt-3">
