@@ -7,12 +7,21 @@ export const fetchedAlbums = async(name) => {
       );
       if (response.ok) {
         let { data } = await response.json();
-        let dataSliced = data.slice(0, 4);
-        
-        return dataSliced
+        return data
       }
     } catch (error) {
         console.log("error",error);
     }
   };
 
+export const singleAlbum = async(id) => {
+ try {
+   let response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
+   if(response.ok){
+    let data = await response.json()
+    return data
+   }
+ } catch (error) {
+  
+ }
+}

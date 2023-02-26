@@ -1,12 +1,11 @@
 import '../MainPageComponent/MainPage.css'
 import { useEffect, useState } from 'react'
 import { fetchedAlbums } from '../../actions'
-import AlbumComponent from '../AlbumComponent'
+import AlbumComponent from './AlbumComponent'
 const MainPage = ()=>{
   const [albumRock,setAlbumRock] = useState([])
   const [albumPop,setAlbumPop] = useState([])
   const [albumHipHop,setAlbumHipHop] = useState([])
-  console.log(albumRock);
   useEffect(()=>{
     (async () => {
       const data = await fetchedAlbums('dreamtheater') //ProgMetal Albums
@@ -16,10 +15,9 @@ const MainPage = ()=>{
       setAlbumPop(data2)
       setAlbumHipHop(data3)
      })()
-    // fetchedAlbums('dreamtheater').then((data)=>{setAlbums(data)})
   },[])
     return(
-      <div className='body'>
+      <div className='body min-vh-100'>
         <div className="col-12 col-md-9 offset-md-3 mainPage">
           <div className="row">
             <div className="col-9 col-lg-11 mainLinks d-none d-md-flex">
@@ -48,7 +46,7 @@ const MainPage = ()=>{
                   className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                  
                 >
-                  {albumRock.map((data,index)=>(
+                  {albumRock.slice(0,4).map((data,index)=>(
                     <AlbumComponent data={data} key={index}/>
                   ))}
                 </div>
@@ -62,7 +60,7 @@ const MainPage = ()=>{
                 <div
                   className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                  
-                >{albumPop.map((data,index)=>(
+                >{albumPop.slice(0,4).map((data,index)=>(
                   <AlbumComponent data={data} key={index}/>
                 ))}</div>
               </div>
@@ -75,7 +73,7 @@ const MainPage = ()=>{
                 <div
                   className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                   id="hipHopSection"
-                >{albumHipHop.map((data,index)=>(
+                >{albumHipHop.slice(0,4).map((data,index)=>(
                   <AlbumComponent data={data} key={index}/>
                 ))}</div>
               </div>

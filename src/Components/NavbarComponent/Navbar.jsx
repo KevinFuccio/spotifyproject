@@ -3,6 +3,7 @@ import logo from "../../assets/Spotify_Logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faBookOpen} from "@fortawesome/free-solid-svg-icons";
 import './Navbar.css';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -14,14 +15,14 @@ const NavBar = () => {
             id="sidebar"
           >
             <div className="nav-container">
-              <a className="navbar-brand" href="index.html">
+              <Link to='/' className="navbar-brand">
                 <img
                   src={logo}
                   alt="Spotify_Logo"
                   width="131"
                   height="40"
                 />
-              </a>
+              </Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -85,7 +86,7 @@ const NavBar = () => {
                 Login
               </button>  
             <div>
-                <a href="#">Cookie Policy</a>|<a href="#"> Privacy</a>
+                <a href="#">Cookie Policy </a>|<a href="#"> Privacy</a>
             </div>
             </div>
           </nav>

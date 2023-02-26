@@ -4,12 +4,15 @@ import './App.css';
 import NavigationBar from './Components/NavbarComponent/Navbar';
 import MainPage from './Components/MainPageComponent/MainPage'
 import NavPlayer from './Components/NavPlayerComponent/NavPlayer'
+import AlbumPage from './Components/AlbumPageComponent/AlbumPage';
 function App() {
   return (
     <BrowserRouter>
       <NavigationBar/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
+        <Route  path='/album/:id' element={<AlbumPage/>}/>
+        <Route  path='/artist/:id' element={<AlbumPage/>}/>
       </Routes>
       <NavPlayer/>
     </BrowserRouter>
