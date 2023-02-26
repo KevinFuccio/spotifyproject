@@ -25,3 +25,14 @@ export const singleAlbum = async(id) => {
   
  }
 }
+export const singleArtist = async(id) => {
+  try {
+    let response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
+    if(response.ok){
+     let data = await response.json()
+     return data
+    }
+  } catch (error) {
+   
+  }
+ }
